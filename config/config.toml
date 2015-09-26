@@ -1,0 +1,27 @@
+[logger]
+    log_file_path = "W:/server.log"
+    debug = true
+    logging_level = "DEBUG"
+[database_connect_opts]
+    addresses = ["ec2-54-200-253-6.us-west-2.compute.amazonaws.com:28015"]
+    database = "flower_pot"
+    auth_key = "ASDFSDgfdj3423!"
+    discover_hosts = true
+    Address = "ec2-54-200-253-6.us-west-2.compute.amazonaws.com:28015"
+    Timeout = "60s"
+    WriteTimeout = "20s"
+    ReadTimeout = "20s"
+    MaxIdle = 10
+    MaxOpen = 10
+    NodeRefreshInterval = "10s"
+    log = true
+[http_server]
+    listen_host = ""
+    listen_port = "8000"
+[web_socket_config]
+    write_wait = "10s"
+    pong_wait = "60s"
+    ping_period = "50s"
+    max_message_size = 512
+    read_buffer_size = 1024
+    write_buffer_size = 1024
