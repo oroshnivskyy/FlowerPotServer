@@ -31,7 +31,7 @@ func NewRecord(data []string, name string, clientIP string) (*HumidityRecord, er
 
 	allHumidities := make([]*Humidity, len(data))
 	for index, humidity := range data{
-		uint32humidity, err := strconv.ParseUint(humidity, 16, 0)
+		uint32humidity, err := strconv.ParseUint(humidity, 10, 0)
 		if err!=nil{
 			continue
 		}
