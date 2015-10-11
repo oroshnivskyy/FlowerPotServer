@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+            <th>Date</th>
+            <th>Sensor</th>
+            <th>Humidity</th>
+            </thead>
+            <tbody>
+            {{ range $row := .Humidities }}
+            <tr>
+                <td rowspan="7">{{$row.DateCreated}}</td>
+
+            </tr>
+            {{ range $element := $row.Data }}
+            <tr>
+                <td>{{$element.Id}}</td>
+                <td>{{$element.Humidity}}</td>
+            </tr>
+            {{ end }}
+            {{ end }}
+            </tbody>
+        </table>
+        <nav>
+            <ul class="pager">
+                {{ if ge .CurrentPage 1 }}
+                <li><a href="?page={{ .PreviousPage }}">Previous</a></li>
+                {{ end }}
+                {{ if .HasNext }}
+                <li><a href="?page={{ .NextPage }}">Next</a></li>
+                {{ end }}
+            </ul>
+        </nav>
+    </div>
+</div>

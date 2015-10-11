@@ -24,3 +24,7 @@ _testmain.go
 *.prof
 vendor/*
 .idea/*
+pkg
+rethinkdb_data
+cfg/config.toml
+src/github.com

@@ -12,7 +12,7 @@ type CommandLineConfiguration struct {
 func GetCommandLineConfiguration() (config *CommandLineConfiguration, err error) {
 	config = new(CommandLineConfiguration)
 
-	flag.StringVar(&(config.ConfigFilePath), "c", "./config/config.toml", "Path to configuration")
+	flag.StringVar(&(config.ConfigFilePath), "c", "./cfg/config.toml", "Path to configuration")
 	flag.Parse()
 
 	return

@@ -1,8 +1,9 @@
 package index
 import (
+	"net/http"
 	"github.com/martini-contrib/render"
 )
 
-func Get(r render.Render)  {
-	r.HTML(200, "index", "rosh")
+func Get(w http.ResponseWriter, r *http.Request, render render.Render)  {
+	render.HTML(200, "index", "index")
 }

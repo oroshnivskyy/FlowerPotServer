@@ -41,7 +41,9 @@ func main() {
 	m.Map(&cfg.HttpServer)
 	m.Map(&cfg)
 	m.Map(session)
-	m.Use(render.Renderer())
+	m.Use(render.Renderer(render.Options{
+		Layout: "base",
+	}))
 	routing.Configure(m)
 	log.Info("Listening")
 	m.RunOnAddr(cfg.ListenHost + ":" + cfg.ListenPort)
